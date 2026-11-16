@@ -1,0 +1,12 @@
+{
+  "inicio_utc": "2026-11-16T22:56:15.748349+00:00",
+  "datos": "Datos ficticios de demostración, ejecutados contra motores reales.",
+  "ids": {
+    "clientes": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e",
+    "productos": "719b1c89-0eb6-4252-96c4-346382861321",
+    "pedidos": "efd1c52e-5bdc-4ca8-a798-560cac860d2a",
+    "resenas": "f9dbd8b2-c3bf-4d18-8a07-e60e88e18c56",
+    "carritos": "aac5baf6-631f-4ac8-8bb6-4e1b82659d3e",
+    "preferencias": "54c09eb7-2c34-4330-8242-38271decb794"
+  }
+}

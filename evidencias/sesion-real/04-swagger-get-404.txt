@@ -1,0 +1,74 @@
+GET
+/productos/{id}
+Get Productos Obtener
+Parameters
+Cancel
+Name	Description
+
+id *
+string($uuid)
+(path)
+	
+Execute
+Clear
+Responses
+Curl
+curl -X 'GET' \
+  'http://127.0.0.1:8000/productos/05f84f3d-678e-4b4d-9800-71acaac184f7' \
+  -H 'accept: */*'
+Request URL
+http://127.0.0.1:8000/productos/05f84f3d-678e-4b4d-9800-71acaac184f7
+Server response
+Code	Details
+404
+Undocumented
+	
+
+Error: Not Found
+
+Response body
+Download
+{
+  "detail": "Registro no encontrado"
+}
+Response headers
+ content-length: 35 
+ content-type: application/json 
+ date: Mon,16 Nov 2026 22:56:49 GMT 
+ server: uvicorn 
+Responses
+Code	Description	Links
+200	
+
+Successful Response
+
+Media type
+application/json
+Controls Accept header.
+Example Value
+Schema
+"string"
+	No links
+422	
+
+Validation Error
+
+Media type
+application/json
+Example Value
+Schema
+{
+  "detail": [
+    {
+      "loc": [
+        "string",
+        0
+      ],
+      "msg": "string",
+      "type": "string",
+      "input": "string",
+      "ctx": {}
+    }
+  ]
+}
+	No links

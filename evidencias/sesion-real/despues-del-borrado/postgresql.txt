@@ -1,0 +1,21 @@
+Fecha UTC: 2026-11-16T22:56:20.326368+00:00
+$ docker compose exec -T postgres psql -U tienda -d tienda -x -c 'SELECT id,nombre,precio_centavos,stock,eliminado,eliminado_en FROM productos WHERE id = '"'"'719b1c89-0eb6-4252-96c4-346382861321'"'"';'
+-[ RECORD 1 ]---+-------------------------------------
+id              | 719b1c89-0eb6-4252-96c4-346382861321
+nombre          | Café de Colima 500 g (demostración)
+precio_centavos | 8950
+stock           | 18
+eliminado       | t
+eliminado_en    | 2026-11-16T22:56:19.958186+00:00
+
+
+Fecha UTC: 2026-11-16T22:56:20.592950+00:00
+$ docker compose exec -T postgres psql -U tienda -d tienda -x -c 'SELECT id,nombre,email,eliminado,eliminado_en FROM clientes WHERE id = '"'"'8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e'"'"';'
+-[ RECORD 1 ]+-------------------------------------
+id           | 8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e
+nombre       | María Torres López (demostración)
+email        | maria.torres@example.com
+eliminado    | t
+eliminado_en | 2026-11-16T22:56:20.010295+00:00
+
+

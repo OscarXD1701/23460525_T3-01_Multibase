@@ -1,0 +1,12 @@
+Fecha UTC: 2026-11-16T22:57:33.227592+00:00
+Consulta SQL:
+SELECT id,nombre,precio_centavos,stock,eliminado,eliminado_en FROM productos WHERE id = '05f84f3d-678e-4b4d-9800-71acaac184f7';
+
+-[ RECORD 1 ]---+-------------------------------------
+id              | 05f84f3d-678e-4b4d-9800-71acaac184f7
+nombre          | Café de Colima molido 500 g
+precio_centavos | 8950
+stock           | 18
+eliminado       | t
+eliminado_en    | 2026-11-16T22:56:34.098503+00:00
+

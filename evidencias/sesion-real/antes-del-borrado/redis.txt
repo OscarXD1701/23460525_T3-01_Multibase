@@ -1,0 +1,24 @@
+Fecha UTC: 2026-11-16T22:56:18.607215+00:00
+$ docker compose exec -T redis redis-cli GET t301:carritos:aac5baf6-631f-4ac8-8bb6-4e1b82659d3e
+{"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "items": [], "id": "aac5baf6-631f-4ac8-8bb6-4e1b82659d3e", "creado_en": "2026-11-16T22:56:15.941512+00:00", "eliminado": false, "eliminado_en": null}
+
+Fecha UTC: 2026-11-16T22:56:18.865674+00:00
+$ docker compose exec -T redis redis-cli EXISTS t301:carritos:aac5baf6-631f-4ac8-8bb6-4e1b82659d3e
+1
+
+Fecha UTC: 2026-11-16T22:56:19.128457+00:00
+$ docker compose exec -T redis redis-cli TTL t301:carritos:aac5baf6-631f-4ac8-8bb6-4e1b82659d3e
+-1
+
+Fecha UTC: 2026-11-16T22:56:19.361225+00:00
+$ docker compose exec -T redis redis-cli GET t301:preferencias:54c09eb7-2c34-4330-8242-38271decb794
+{"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "tema": "oscuro", "idioma": "es", "id": "54c09eb7-2c34-4330-8242-38271decb794", "creado_en": "2026-11-16T22:56:15.963036+00:00", "eliminado": false, "eliminado_en": null}
+
+Fecha UTC: 2026-11-16T22:56:19.598486+00:00
+$ docker compose exec -T redis redis-cli EXISTS t301:preferencias:54c09eb7-2c34-4330-8242-38271decb794
+1
+
+Fecha UTC: 2026-11-16T22:56:19.852787+00:00
+$ docker compose exec -T redis redis-cli TTL t301:preferencias:54c09eb7-2c34-4330-8242-38271decb794
+-1
+

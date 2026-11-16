@@ -1,0 +1,56 @@
+DELETE
+/productos/{id}
+Delete Productos Borrar
+Parameters
+Cancel
+Name	Description
+
+id *
+string($uuid)
+(path)
+	
+Execute
+Clear
+Responses
+Curl
+curl -X 'DELETE' \
+  'http://127.0.0.1:8000/productos/05f84f3d-678e-4b4d-9800-71acaac184f7' \
+  -H 'accept: */*'
+Request URL
+http://127.0.0.1:8000/productos/05f84f3d-678e-4b4d-9800-71acaac184f7
+Server response
+Code	Details
+204	
+Response headers
+ date: Mon,16 Nov 2026 22:56:33 GMT 
+ server: uvicorn 
+Responses
+Code	Description	Links
+204	
+
+Successful Response
+
+	No links
+422	
+
+Validation Error
+
+Media type
+application/json
+Example Value
+Schema
+{
+  "detail": [
+    {
+      "loc": [
+        "string",
+        0
+      ],
+      "msg": "string",
+      "type": "string",
+      "input": "string",
+      "ctx": {}
+    }
+  ]
+}
+	No links

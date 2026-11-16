@@ -1,0 +1,8 @@
+Fecha UTC: 2026-11-16T22:56:23.977209+00:00
+$ docker compose ps
+NAME                        IMAGE                COMMAND                  SERVICE    CREATED       STATUS                 PORTS
+t301-multibase-api-1        t301-multibase-api   "uvicorn app.main:ap…"   api        4 hours ago   Up 4 hours (healthy)   127.0.0.1:8000->8000/tcp
+t301-multibase-mongo-1      mongo:8.0            "docker-entrypoint.s…"   mongo      4 hours ago   Up 4 hours (healthy)   27017/tcp
+t301-multibase-postgres-1   postgres:17-alpine   "docker-entrypoint.s…"   postgres   4 hours ago   Up 4 hours (healthy)   5432/tcp
+t301-multibase-redis-1      redis:7.4-alpine     "docker-entrypoint.s…"   redis      4 hours ago   Up 4 hours (healthy)   6379/tcp
+

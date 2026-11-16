@@ -1,0 +1,237 @@
+SESION HTTP REAL
+Base: http://127.0.0.1:8000
+Datos ficticios; respuestas capturadas sin editar.
+
+#01 | 2026-11-16T22:56:15.748349+00:00 | 73.31 ms
+GET http://127.0.0.1:8000/salud
+Cuerpo enviado: null
+HTTP 200
+Respuesta: {"estado": "ok", "motores": ["postgresql", "mongodb", "redis"]}
+
+#02 | 2026-11-16T22:56:15.822710+00:00 | 20.89 ms
+POST http://127.0.0.1:8000/clientes
+Cuerpo enviado: {"nombre": "María Torres (demostración)", "email": "maria.torres@example.com"}
+HTTP 201
+Respuesta: {"nombre": "María Torres (demostración)", "email": "maria.torres@example.com", "id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "creado_en": "2026-11-16T22:56:15.827291+00:00", "eliminado": false, "eliminado_en": null}
+
+#03 | 2026-11-16T22:56:15.844476+00:00 | 15.76 ms
+POST http://127.0.0.1:8000/productos
+Cuerpo enviado: {"nombre": "Café de Colima 500 g (demostración)", "precio_centavos": 8950, "stock": 24}
+HTTP 201
+Respuesta: {"nombre": "Café de Colima 500 g (demostración)", "precio_centavos": 8950, "stock": 24, "id": "719b1c89-0eb6-4252-96c4-346382861321", "creado_en": "2026-11-16T22:56:15.847423+00:00", "eliminado": false, "eliminado_en": null}
+
+#04 | 2026-11-16T22:56:15.860787+00:00 | 29.98 ms
+POST http://127.0.0.1:8000/pedidos
+Cuerpo enviado: {"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "items": [{"producto_id": "719b1c89-0eb6-4252-96c4-346382861321", "cantidad": 2}]}
+HTTP 201
+Respuesta: {"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "items": [{"producto_id": "719b1c89-0eb6-4252-96c4-346382861321", "cantidad": 2}], "estado": "pendiente", "id": "efd1c52e-5bdc-4ca8-a798-560cac860d2a", "creado_en": "2026-11-16T22:56:15.883241+00:00", "eliminado": false, "eliminado_en": null}
+
+#05 | 2026-11-16T22:56:15.891823+00:00 | 26.32 ms
+POST http://127.0.0.1:8000/resenas
+Cuerpo enviado: {"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "producto_id": "719b1c89-0eb6-4252-96c4-346382861321", "puntuacion": 4, "comentario": "Buen aroma; empaque recibido sin daños."}
+HTTP 201
+Respuesta: {"producto_id": "719b1c89-0eb6-4252-96c4-346382861321", "cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "puntuacion": 4, "comentario": "Buen aroma; empaque recibido sin daños.", "id": "f9dbd8b2-c3bf-4d18-8a07-e60e88e18c56", "creado_en": "2026-11-16T22:56:15.914249+00:00", "eliminado": false, "eliminado_en": null}
+
+#06 | 2026-11-16T22:56:15.919028+00:00 | 30.54 ms
+POST http://127.0.0.1:8000/carritos
+Cuerpo enviado: {"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "items": [{"producto_id": "719b1c89-0eb6-4252-96c4-346382861321", "cantidad": 1}]}
+HTTP 201
+Respuesta: {"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "items": [{"producto_id": "719b1c89-0eb6-4252-96c4-346382861321", "cantidad": 1}], "id": "aac5baf6-631f-4ac8-8bb6-4e1b82659d3e", "creado_en": "2026-11-16T22:56:15.941512+00:00", "eliminado": false, "eliminado_en": null}
+
+#07 | 2026-11-16T22:56:15.950415+00:00 | 17.39 ms
+POST http://127.0.0.1:8000/preferencias
+Cuerpo enviado: {"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "tema": "claro", "idioma": "es"}
+HTTP 201
+Respuesta: {"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "tema": "claro", "idioma": "es", "id": "54c09eb7-2c34-4330-8242-38271decb794", "creado_en": "2026-11-16T22:56:15.963036+00:00", "eliminado": false, "eliminado_en": null}
+
+#08 | 2026-11-16T22:56:15.969185+00:00 | 14.43 ms
+GET http://127.0.0.1:8000/clientes/8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e
+Cuerpo enviado: null
+HTTP 200
+Respuesta: {"id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "nombre": "María Torres (demostración)", "email": "maria.torres@example.com", "creado_en": "2026-11-16T22:56:15.827291+00:00", "eliminado": false, "eliminado_en": null}
+
+#09 | 2026-11-16T22:56:15.985201+00:00 | 29.7 ms
+PATCH http://127.0.0.1:8000/clientes/8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e
+Cuerpo enviado: {"nombre": "María Torres López (demostración)"}
+HTTP 200
+Respuesta: {"id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "nombre": "María Torres López (demostración)", "email": "maria.torres@example.com", "creado_en": "2026-11-16T22:56:15.827291+00:00", "eliminado": false, "eliminado_en": null}
+
+#10 | 2026-11-16T22:56:16.016155+00:00 | 14.92 ms
+GET http://127.0.0.1:8000/productos/719b1c89-0eb6-4252-96c4-346382861321
+Cuerpo enviado: null
+HTTP 200
+Respuesta: {"id": "719b1c89-0eb6-4252-96c4-346382861321", "nombre": "Café de Colima 500 g (demostración)", "precio_centavos": 8950, "stock": 24, "creado_en": "2026-11-16T22:56:15.847423+00:00", "eliminado": false, "eliminado_en": null}
+
+#11 | 2026-11-16T22:56:16.031994+00:00 | 28.36 ms
+PATCH http://127.0.0.1:8000/productos/719b1c89-0eb6-4252-96c4-346382861321
+Cuerpo enviado: {"stock": 18}
+HTTP 200
+Respuesta: {"id": "719b1c89-0eb6-4252-96c4-346382861321", "nombre": "Café de Colima 500 g (demostración)", "precio_centavos": 8950, "stock": 18, "creado_en": "2026-11-16T22:56:15.847423+00:00", "eliminado": false, "eliminado_en": null}
+
+#12 | 2026-11-16T22:56:16.062121+00:00 | 13.99 ms
+GET http://127.0.0.1:8000/pedidos/efd1c52e-5bdc-4ca8-a798-560cac860d2a
+Cuerpo enviado: null
+HTTP 200
+Respuesta: {"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "items": [{"producto_id": "719b1c89-0eb6-4252-96c4-346382861321", "cantidad": 2}], "estado": "pendiente", "id": "efd1c52e-5bdc-4ca8-a798-560cac860d2a", "creado_en": "2026-11-16T22:56:15.883241+00:00", "eliminado": false, "eliminado_en": null}
+
+#13 | 2026-11-16T22:56:16.076860+00:00 | 9.09 ms
+PATCH http://127.0.0.1:8000/pedidos/efd1c52e-5bdc-4ca8-a798-560cac860d2a
+Cuerpo enviado: {"estado": "pagado"}
+HTTP 200
+Respuesta: {"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "items": [{"producto_id": "719b1c89-0eb6-4252-96c4-346382861321", "cantidad": 2}], "estado": "pagado", "id": "efd1c52e-5bdc-4ca8-a798-560cac860d2a", "creado_en": "2026-11-16T22:56:15.883241+00:00", "eliminado": false, "eliminado_en": null}
+
+#14 | 2026-11-16T22:56:16.087230+00:00 | 6.5 ms
+GET http://127.0.0.1:8000/resenas/f9dbd8b2-c3bf-4d18-8a07-e60e88e18c56
+Cuerpo enviado: null
+HTTP 200
+Respuesta: {"producto_id": "719b1c89-0eb6-4252-96c4-346382861321", "cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "puntuacion": 4, "comentario": "Buen aroma; empaque recibido sin daños.", "id": "f9dbd8b2-c3bf-4d18-8a07-e60e88e18c56", "creado_en": "2026-11-16T22:56:15.914249+00:00", "eliminado": false, "eliminado_en": null}
+
+#15 | 2026-11-16T22:56:16.094763+00:00 | 7.26 ms
+PATCH http://127.0.0.1:8000/resenas/f9dbd8b2-c3bf-4d18-8a07-e60e88e18c56
+Cuerpo enviado: {"puntuacion": 5}
+HTTP 200
+Respuesta: {"producto_id": "719b1c89-0eb6-4252-96c4-346382861321", "cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "puntuacion": 5, "comentario": "Buen aroma; empaque recibido sin daños.", "id": "f9dbd8b2-c3bf-4d18-8a07-e60e88e18c56", "creado_en": "2026-11-16T22:56:15.914249+00:00", "eliminado": false, "eliminado_en": null}
+
+#16 | 2026-11-16T22:56:16.103397+00:00 | 4.87 ms
+GET http://127.0.0.1:8000/carritos/aac5baf6-631f-4ac8-8bb6-4e1b82659d3e
+Cuerpo enviado: null
+HTTP 200
+Respuesta: {"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "items": [{"producto_id": "719b1c89-0eb6-4252-96c4-346382861321", "cantidad": 1}], "id": "aac5baf6-631f-4ac8-8bb6-4e1b82659d3e", "creado_en": "2026-11-16T22:56:15.941512+00:00", "eliminado": false, "eliminado_en": null}
+
+#17 | 2026-11-16T22:56:16.109222+00:00 | 10.94 ms
+PATCH http://127.0.0.1:8000/carritos/aac5baf6-631f-4ac8-8bb6-4e1b82659d3e
+Cuerpo enviado: {"items": []}
+HTTP 200
+Respuesta: {"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "items": [], "id": "aac5baf6-631f-4ac8-8bb6-4e1b82659d3e", "creado_en": "2026-11-16T22:56:15.941512+00:00", "eliminado": false, "eliminado_en": null}
+
+#18 | 2026-11-16T22:56:16.121195+00:00 | 4.66 ms
+GET http://127.0.0.1:8000/preferencias/54c09eb7-2c34-4330-8242-38271decb794
+Cuerpo enviado: null
+HTTP 200
+Respuesta: {"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "tema": "claro", "idioma": "es", "id": "54c09eb7-2c34-4330-8242-38271decb794", "creado_en": "2026-11-16T22:56:15.963036+00:00", "eliminado": false, "eliminado_en": null}
+
+#19 | 2026-11-16T22:56:16.127035+00:00 | 28.66 ms
+PATCH http://127.0.0.1:8000/preferencias/54c09eb7-2c34-4330-8242-38271decb794
+Cuerpo enviado: {"tema": "oscuro"}
+HTTP 200
+Respuesta: {"cliente_id": "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e", "tema": "oscuro", "idioma": "es", "id": "54c09eb7-2c34-4330-8242-38271decb794", "creado_en": "2026-11-16T22:56:15.963036+00:00", "eliminado": false, "eliminado_en": null}
+
+#20 | 2026-11-16T22:56:16.157463+00:00 | 5.27 ms
+POST http://127.0.0.1:8000/productos
+Cuerpo enviado: {"nombre": "Dato inválido de prueba", "precio_centavos": -50}
+HTTP 422
+Respuesta: {"detail": [{"type": "greater_than_equal", "loc": ["body", "precio_centavos"], "msg": "Input should be greater than or equal to 0", "input": -50, "ctx": {"ge": 0}}]}
+
+#21 | 2026-11-16T22:56:16.163429+00:00 | 15.63 ms
+PATCH http://127.0.0.1:8000/productos/719b1c89-0eb6-4252-96c4-346382861321
+Cuerpo enviado: {"eliminado": false}
+HTTP 422
+Respuesta: {"detail": "PATCH requiere campos válidos; no acepta metadatos"}
+
+#22 | 2026-11-16T22:56:19.853904+00:00 | 8.38 ms
+DELETE http://127.0.0.1:8000/preferencias/54c09eb7-2c34-4330-8242-38271decb794
+Cuerpo enviado: null
+HTTP 204
+Respuesta: null
+
+#23 | 2026-11-16T22:56:19.863970+00:00 | 5.63 ms
+GET http://127.0.0.1:8000/preferencias/54c09eb7-2c34-4330-8242-38271decb794
+Cuerpo enviado: null
+HTTP 404
+Respuesta: {"detail": "Registro no encontrado"}
+
+#24 | 2026-11-16T22:56:19.870536+00:00 | 9.43 ms
+GET http://127.0.0.1:8000/preferencias?limite=100
+Cuerpo enviado: null
+HTTP 200
+Respuesta: []
+
+#25 | 2026-11-16T22:56:19.881603+00:00 | 6.77 ms
+DELETE http://127.0.0.1:8000/carritos/aac5baf6-631f-4ac8-8bb6-4e1b82659d3e
+Cuerpo enviado: null
+HTTP 204
+Respuesta: null
+
+#26 | 2026-11-16T22:56:19.888927+00:00 | 4.72 ms
+GET http://127.0.0.1:8000/carritos/aac5baf6-631f-4ac8-8bb6-4e1b82659d3e
+Cuerpo enviado: null
+HTTP 404
+Respuesta: {"detail": "Registro no encontrado"}
+
+#27 | 2026-11-16T22:56:19.895296+00:00 | 7.37 ms
+GET http://127.0.0.1:8000/carritos?limite=100
+Cuerpo enviado: null
+HTTP 200
+Respuesta: []
+
+#28 | 2026-11-16T22:56:19.904008+00:00 | 5.58 ms
+DELETE http://127.0.0.1:8000/resenas/f9dbd8b2-c3bf-4d18-8a07-e60e88e18c56
+Cuerpo enviado: null
+HTTP 204
+Respuesta: null
+
+#29 | 2026-11-16T22:56:19.910299+00:00 | 5.26 ms
+GET http://127.0.0.1:8000/resenas/f9dbd8b2-c3bf-4d18-8a07-e60e88e18c56
+Cuerpo enviado: null
+HTTP 404
+Respuesta: {"detail": "Registro no encontrado"}
+
+#30 | 2026-11-16T22:56:19.917177+00:00 | 4.85 ms
+GET http://127.0.0.1:8000/resenas?limite=100
+Cuerpo enviado: null
+HTTP 200
+Respuesta: []
+
+#31 | 2026-11-16T22:56:19.923056+00:00 | 4.98 ms
+DELETE http://127.0.0.1:8000/pedidos/efd1c52e-5bdc-4ca8-a798-560cac860d2a
+Cuerpo enviado: null
+HTTP 204
+Respuesta: null
+
+#32 | 2026-11-16T22:56:19.929355+00:00 | 5.56 ms
+GET http://127.0.0.1:8000/pedidos/efd1c52e-5bdc-4ca8-a798-560cac860d2a
+Cuerpo enviado: null
+HTTP 404
+Respuesta: {"detail": "Registro no encontrado"}
+
+#33 | 2026-11-16T22:56:19.936121+00:00 | 5.82 ms
+GET http://127.0.0.1:8000/pedidos?limite=100
+Cuerpo enviado: null
+HTTP 200
+Respuesta: []
+
+#34 | 2026-11-16T22:56:19.942904+00:00 | 28.72 ms
+DELETE http://127.0.0.1:8000/productos/719b1c89-0eb6-4252-96c4-346382861321
+Cuerpo enviado: null
+HTTP 204
+Respuesta: null
+
+#35 | 2026-11-16T22:56:19.973054+00:00 | 13.48 ms
+GET http://127.0.0.1:8000/productos/719b1c89-0eb6-4252-96c4-346382861321
+Cuerpo enviado: null
+HTTP 404
+Respuesta: {"detail": "Registro no encontrado"}
+
+#36 | 2026-11-16T22:56:19.987399+00:00 | 18.8 ms
+GET http://127.0.0.1:8000/productos?limite=100
+Cuerpo enviado: null
+HTTP 200
+Respuesta: [{"id": "05f84f3d-678e-4b4d-9800-71acaac184f7", "nombre": "Café de Colima molido 500 g", "precio_centavos": 8950, "stock": 18, "creado_en": "2026-11-16T22:54:06.559642+00:00", "eliminado": false, "eliminado_en": null}]
+
+#37 | 2026-11-16T22:56:20.007686+00:00 | 15.47 ms
+DELETE http://127.0.0.1:8000/clientes/8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e
+Cuerpo enviado: null
+HTTP 204
+Respuesta: null
+
+#38 | 2026-11-16T22:56:20.024248+00:00 | 14.97 ms
+GET http://127.0.0.1:8000/clientes/8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e
+Cuerpo enviado: null
+HTTP 404
+Respuesta: {"detail": "Registro no encontrado"}
+
+#39 | 2026-11-16T22:56:20.040494+00:00 | 14.86 ms
+GET http://127.0.0.1:8000/clientes?limite=100
+Cuerpo enviado: null
+HTTP 200
+Respuesta: []

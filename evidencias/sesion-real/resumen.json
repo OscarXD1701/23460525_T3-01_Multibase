@@ -1,0 +1,69 @@
+{
+  "fecha_utc": "2026-11-16T22:57:33.250300+00:00",
+  "peticiones_verificadas": 39,
+  "columnas": [
+    "recurso",
+    "id",
+    "POST",
+    "GET",
+    "PATCH",
+    "DELETE",
+    "GET_posterior"
+  ],
+  "resultados": [
+    [
+      "clientes",
+      "8d7cd6fc-49a2-4a61-a49c-0e8ac3bb069e",
+      201,
+      200,
+      200,
+      204,
+      404
+    ],
+    [
+      "productos",
+      "719b1c89-0eb6-4252-96c4-346382861321",
+      201,
+      200,
+      200,
+      204,
+      404
+    ],
+    [
+      "pedidos",
+      "efd1c52e-5bdc-4ca8-a798-560cac860d2a",
+      201,
+      200,
+      200,
+      204,
+      404
+    ],
+    [
+      "resenas",
+      "f9dbd8b2-c3bf-4d18-8a07-e60e88e18c56",
+      201,
+      200,
+      200,
+      204,
+      404
+    ],
+    [
+      "carritos",
+      "aac5baf6-631f-4ac8-8bb6-4e1b82659d3e",
+      201,
+      200,
+      200,
+      204,
+      404
+    ],
+    [
+      "preferencias",
+      "54c09eb7-2c34-4330-8242-38271decb794",
+      201,
+      200,
+      200,
+      204,
+      404
+    ]
+  ]
+}
