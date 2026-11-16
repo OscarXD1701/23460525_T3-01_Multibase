@@ -1,0 +1,2 @@
+GET /preferencias con Redis detenido: HTTP 503
+Los mismos IDs y marcas de borrado permanecen en los seis recursos tras reiniciar PostgreSQL, MongoDB y Redis. Las claves Redis no tienen TTL. Salud posterior: HTTP 200.

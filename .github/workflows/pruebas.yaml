@@ -1,0 +1,13 @@
+name: Integracion
+on: [push, pull_request]
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose up --build -d --wait
+      - run: docker compose exec -T api python -m unittest -v tests.test_api
+      - if: always()
+        run: docker compose logs --no-color
+      - if: always()
+        run: docker compose down
