@@ -235,27 +235,31 @@ evidencias/            Salida real de las comprobaciones de esta entrega
 
 ## Repositorio e integrantes
 
-Se entrega un repositorio **local**, por decisión del estudiante. El historial contiene
-commits reales de Oscar Emiliano Ramírez García; no se inventan aportaciones de otras
-personas. Para revisar el historial: `git log --oneline` o `git log --format=fuller`.
-Si se incorpora alguien al equipo, debe configurar su identidad y hacer sus propios
-commits antes de la entrega final. No basta con agregar su nombre al README.
+Repositorio público de entrega:
 
-**Pendiente para cumplir el requisito de entrega compartida:** crear un repositorio
-vacío en GitHub o GitLab, compartir acceso con el docente y publicar este historial:
+**https://github.com/OscarXD1701/23460525_T3-01_Multibase**
 
-```sh
-git remote add origin URL_REAL_DEL_REPOSITORIO
-git push -u origin main
-```
+Incluye código, README, pruebas, evidencias y el historial completo. El docente puede
+consultarlo sin iniciar sesión. El trabajo es individual: los commits conservan la
+autoría de Oscar Emiliano Ramírez García. Si se incorpora otra persona, debe configurar
+su identidad y realizar sus propios commits; agregar su nombre al README no sustituye
+su contribución.
 
-No agregue README remoto al crear ese repositorio vacío: ya existe uno en este proyecto.
-Si se usa el archivo Git bundle adjunto, reconstruya el repositorio con:
+Para descargar e iniciar el proyecto:
 
 ```sh
-git clone 23460525_T3-01_Multibase.bundle tienda-multibase
-cd tienda-multibase
+git clone https://github.com/OscarXD1701/23460525_T3-01_Multibase.git
+cd 23460525_T3-01_Multibase
+docker compose up --build -d --wait
 ```
+
+Para entregar en Classroom, comparta la URL del repositorio. El PDF de evidencias es
+complementario y está disponible en
+[evidencias/23460525_T3-01_Evidencias.pdf](evidencias/23460525_T3-01_Evidencias.pdf).
+Las capturas y transcripciones documentan el estado del proyecto durante su ejecución
+local, anterior a la publicación; no describen la visibilidad actual del repositorio.
+
+Para revisar la autoría: `git log --format=fuller`.
 
 ## Uso de inteligencia artificial y referencias
 
@@ -286,5 +290,5 @@ docker compose exec -T api python -m scripts.verificar_retencion
 ```
 
 Los registros de prueba se conservan marcados como eliminados. El servicio queda
-listo para crear sus propios registros desde `/docs`. La publicación remota no se
-realizó porque se solicitó conservar el repositorio local por ahora.
+listo para crear sus propios registros desde `/docs`. El repositorio se publicó posteriormente en GitHub, conservando estos archivos
+como evidencia histórica de la ejecución local.
